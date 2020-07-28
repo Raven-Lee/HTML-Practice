@@ -6,23 +6,29 @@
 		<style>
 			* {
 				margin:0;
+				text-decoration: none;
+			}
+			.background{
+				background-color: #f2f2f2;
+			}
+			.bigsection1{
+				background-color: #ffffff;
+				padding:53px 0px 122px;
+				margin:0px 0px 30px;
 			}
 			#navigation{
-				height: 44px;
-				display: flex;
-				align-items: center;
-				justify-content: center;
+				text-align: center;
 				background-color:black;
-				list-style: none;
-			}
-			.appleLogo{
+				height: 44px;
 				
 			}
-			#navigation .item{
+			#navigation .last{
+				border:none;
+			}
+			.item{
 				text-decoration: none;
 				color: #cecece;
-				padding: 50px;
-				
+				padding: 20px;
 			}
 			#models{
 				background-color: #f4f4f5;
@@ -36,61 +42,163 @@
 			.blcoks{
 				margin:0 auto;
 				padding-top: 150px;
-				align-items: center;
-			}
-			.blcok{
 				display: flex;
-				height: 563px;
-				width: 980px;
-				margin:0 auto
+				flex-flow: row nowrap;
+				align-items: center;
+				justify-content: center;
 				
 			}
-			.modelInfo{
-				float: left;
-				text-align: left;
-				height: 354px;
-				width: 490px;
+			.blcok{
+				width: 980px;
+				height: 563px;
+				display: flex;
+				flex-flow: row nowrap;
+				align-items: center;
 				justify-content: center;
+				text-align: center;
+			}
+			.modelInfo,.modelInfo2{
+				text-align: left;
+				vertical-align: middle;
+				width: 490px;
+				height: 354px;
 			}
 			.new{
 				color: #bf4800;
 			}	
 			.slogan{
-				font-size: 48px;
+				margin-top: 6px;
+				font-size: 40px;
 				font-family: "SF Pro SC","SF Pro Display","SF Pro Icons","PingFang SC","Helvetica Neue","Helvetica","Arial",sans-serif;
-				
+				font-weight: 600;
+				line-height: 1.08349;
+				letter-spacing: 0em;
+				font-style: normal;
 			}
 			.price{
 				font-size: 40px;
 			}
-			.discountInfo{
-				line-height: 40px;
-				font-size: 17px;
+			.discountWord{
+				
 			}
-			.modelImg{
+			#modelImg{
 				float: left;
-				width: 490px;
-				height: 567px
 			}
 			#buyButton{
 				color: #ffffff;
 				background-color: #0071e3;
+				margin-top: 24px;
 			}
-			
+			.furtherMore{
+				margin-top: 14px;
+				font-size: 17px;
+				color: #06c;
+			}
+			.modelInfo2{
+				
+				padding-left: 80px;
+			}
+			.section2{
+				width: 980px; height: 889px;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+				margin-left: auto;
+				margin-right: auto;
+				padding-top: 90px;
+
+			}
+			.WhichiPhone{
+				width: 980px;
+				text-align: center;
+			}
+			.compare{
+				margin-top: 26px;
+				margin-bottom: 52px;
+			}
+			.WhichiPhones{
+				display: flex;
+				flex-direction: row;
+			}
+			.iPhone{
+				width: 245px;
+				height: 637px;
+				padding-left: 20px;
+				padding-right: 20px;
+				text-align: left;
+			}
+			.column-image{
+				margin-bottom: 30px;
+			}
+			.featture-list{
+				list-style: none;
+				margin: 0;
+				padding: 0;
+			}
+			.compare-headline{
+				margin-bottom: 4px;
+				font-size: 24px;
+				line-height: 1.16667;
+				font-weight: 600;
+				letter-spacing: .009em;
+			}
+			.compare-reduce{
+			    font-weight: 600;
+			    margin-top: 0;
+				font-size: 14px;
+			    line-height: 1.42859;		
+				font-style: normal;
+				display: block;
+				margin-block-start: 1em;
+				margin-block-end: 1em;
+				margin-inline-start: 0px;
+				margin-inline-end: 0px;
+			}
+			.list-item{
+				padding-top: 20px;
+				font-style: normal;
+				font-size: 14px;
+				line-height: 1.42859;
+				font-weight: 400;
+			}
+			.footnote{
+				text-decoration: none;
+				white-space: nowrap;
+				font-size: 12px;
+				
+			}
+			.blcoks2{
+				display: flex;
+				flex-direction: row;
+				justify-content: center;
+				width: 1115px;
+				height: 885px;
+				padding-left: 30px;
+				padding-right: 30px;
+				margin:0 30px
+			}
+			.blcok2{
+				background-color: #ffffff;
+				width: 512.5px;
+				height: 658px;
+			}
+			.block2-headline{
+				font-size: 40px;
+				margin:52px;
+				text-align: center;
+			}
 		</style>
 	</head>
 	<body>
-		<ul id="navigation">
-			<li href="#" class="appleLogo">
-				<a href="#" style="background: url(https://www.apple.com.cn/ac/globalnav/6/zh_CN/images/be15095f-5a20-57d0-ad14-cf4c638e223a/globalnav_apple_image__cxwwnrj0urau_large.svg);"></a>
-			</li>
-			<li href="#" class="item">Mac</li>
-			<li href="#" class="item">iPad</li>
-			<li href="#" class="item">iPhone</li>
-			<li href="#" class="item">iWatch</li>
-			<li href="#" class="item">TV</li>
-			<li href="#" class="item">Music</li>
-		</ul>
+		<div id="navigation">
+			<a href="#" class="item">Mac</a>
+			<a href="#" class="item">iPad</a>
+			<a href="#" class="item">iPhone</a>
+			<a href="#" class="item">iWatch</a>
+			<a href="#" class="item">TV</a>
+			<a href="#" class="item last">Music</a>
+		</div>
 		<div id="models">
 			<a href="#" class="item2">iPhone 11 Pro</a>
 			<a href="#" class="item2">iPhone 11</a>
@@ -101,22 +209,168 @@
 			<a href="#" class="item2">配件</a>
 			<a href="#" class="item2">iOS13</a>
 		</div>
-		<div class="blcoks">
-			<div class="blcok">
-				<div class="modelInfo">
-					<span class="new">新款</span><br>
-					<span class="model">iPhone SE</span><br>
-					<span class="slogan">称心称手，<br>超值入手。</span><br>
-					<span class="price">RMB 3299 起</span><br>
-					<span class="discountInfo">折抵换购，仅 RMB 96 每月或 RMB 2299 起。</span><br>
-					<input type="button" name="" id="buyButton" value="购买" /><br>
-					<a href="https://www.apple.com.cn/iphone-se/">进一步了解</a>
+		<div class="background">
+			<div class="bigsection1">
+				<div class="blcoks">
+					<div class="blcok">
+						<div class="modelInfo">
+							<span class="new">新款</span><br>
+							<span class="model">iPhone SE</span><br>
+							<span class="slogan">称心称手，<br>超值入手。</span><br>
+							<span class="price">RMB 3299 起</span><br>
+							<span class="discountWord">
+								折抵换购，仅 RMB 96 每月或 RMB 2299 起。
+							</span><br>
+							<input type="button" name="" id="buyButton" value="购买" /><br>
+							<a class="furtherMore" href="https://www.apple.com.cn/iphone-se/">进一步了解></a>
+							
+						</div>
+						<div id="modelImg">
+							<img src="https://www.apple.com.cn/v/iphone/home/al/images/overview/hero/hero_iphone_se__barrz3dlvxea_large.jpg" >
+						</div>
+					</div>
+					
 				</div>
-				<div class="modelImg">
-					<img src="https://www.apple.com.cn/v/iphone/home/al/images/overview/hero/hero_iphone_se__barrz3dlvxea_large.jpg" >
+				<div class="blcoks">
+					<div class="blcok">
+						<div id="modelImg">
+							<img src="https://www.apple.com.cn/v/iphone/home/al/images/overview/hero/hero_iphone_11__bsnxu2gpf98i_large.jpg" >
+						</div>
+						<div class="modelInfo2">
+							<span class="model">iPhone 11</span><br>
+							<span class="slogan">一切都刚刚好。</span><br>
+							<span class="price">RMB 3299 起</span><br>
+							<span class="discountWord">
+								折抵换购，仅 RMB 175/月或 RMB 4199 起*。
+							</span><br>
+							<input type="button" name="" id="buyButton" value="购买" /><br>
+							<a class="furtherMore" href="https://www.apple.com.cn/iphone-se/">进一步了解</a>
+						</div>
+					</div>
+				</div>
+				<div class="blcoks">
+					<div class="blcok">
+						<div class="modelInfo">
+							<span class="model">iPhone 11 Pro</span><br>
+							<span class="slogan">摄像头、显示屏、性能，<br>样样 Pro 如其名。</span><br>
+							
+							<span class="discountWord">
+								折抵换购，仅 RMB 283/月或 RMB 6799 起*。
+							</span><br>
+							<input type="button" name="" id="buyButton" value="购买" /><br>
+							<a class="furtherMore" href="https://www.apple.com.cn/iphone-se/">进一步了解</a>
+						</div>
+						<div id="modelImg">
+							<img src="https://www.apple.com.cn/v/iphone/home/al/images/overview/hero/hero_iphone_11_pro__d2lf9zrtcv8m_large.jpg" >
+						</div>
+					</div>
+				</div>
+				<div class="section2">
+					<h2 class="WhichiPhone">哪款 iPhone 适合你？</h2>
+					<div class="compare">比较各款 iPhone 机型></div>
+					<div class="WhichiPhones">
+						<div class="iPhone">
+							<div class="column-image image-iphone"><img src="https://www.apple.com.cn/v/iphone/home/al/images/overview/compare/compare_iphone_11_pro__fvqwhr4dkhiu_large.jpg" ></div>
+							<ul class="featture-list">
+								<li class="compare-headline">iPhone 11 Pro</li>
+								<li class="compare-reduce">RMB 8699 起</li>
+								<li class="list-item">三摄系统<br>(超广角、广角、长焦)</li>
+								<li class="list-item">视频播放最长可达 20 小时
+									<sup class="footnote">1</sup>
+								</li>
+								<li class="list-item">抗水性能：<br>最多可在 4 米水深停留 30 分钟
+									<sup class="footnote">2</sup>
+								</li>
+								<li class="list-item">5.8 英寸或 6.5 英寸<br>超视网膜 XDR 显示屏
+									<sup class="footnote">3</sup>
+								</li>
+							</ul>
+							<input type="button" name="" id="buyButton" value="购买" /><br>
+							<a class="furtherMore" href="https://www.apple.com.cn/iphone-se/">进一步了解</a>
+						</div>
+						<div class="iPhone">
+							<div class="column-image image-iphone"><img src="https://www.apple.com.cn/v/iphone/home/al/images/overview/compare/compare_iphone_11__f0r1z5etd722_large.jpg" ></div>
+							<ul class="featture-list">
+								<li class="compare-headline">iPhone 11 </li>
+								<li class="compare-reduce">RMB 5499  起</li>
+								<li class="list-item">三摄系统<br>(超广角、广角)</li>
+								<li class="list-item">视频播放最长可达 17 小时
+									<sup class="footnote">1</sup>
+								</li>
+								<li class="list-item">抗水性能：<br>最多可在 2 米水深停留 30 分钟
+									<sup class="footnote">2</sup>
+								</li>
+								<li class="list-item">6.1 英寸<br>Liquid 视网膜高清显示屏
+									<sup class="footnote">3</sup>
+								</li>
+							</ul>
+							<input type="button" name="" id="buyButton" value="购买" /><br>
+							<a class="furtherMore" href="https://www.apple.com.cn/iphone-se/">进一步了解</a>
+						</div>
+						<div class="iPhone">
+							<div class="column-image image-iphone"><img src="https://www.apple.com.cn/v/iphone/home/al/images/overview/compare/compare_iphone_se__buv6h7jbk5n6_large.jpg" ></div>
+							<ul class="featture-list">
+								<li class="compare-headline">iPhone SE </li>
+								<li class="compare-reduce">RMB 3299  起</li>
+								<li class="list-item">单摄系统<br>广角</li>
+								<li class="list-item">视频播放最长可达 13 小时
+									<sup class="footnote">1</sup>
+								</li>
+								<li class="list-item">抗水性能：<br>最多可在 1 米水深停留 30 分钟
+									<sup class="footnote">2</sup>
+								</li>
+								<li class="list-item">4.7 英寸<br>视网膜高清显示屏
+									<sup class="footnote">3</sup>
+								</li>
+							</ul>
+							<input type="button" name="" id="buyButton" value="购买" /><br>
+							<a class="furtherMore" href="https://www.apple.com.cn/iphone-se/">进一步了解</a>
+						</div>
+						<div class="iPhone">
+							<div class="column-image image-iphone"><img src="https://www.apple.com.cn/v/iphone/home/al/images/overview/compare/compare_iphone_xr__dexbg7jerlqq_large.jpg" ></div>
+							<ul class="featture-list">
+								<li class="compare-headline">iPhone XR </li>
+								<li class="compare-reduce">RMB 4799  起</li>
+								<li class="list-item">单摄系统<br>广角</li>
+								<li class="list-item">视频播放最长可达 16 小时
+									<sup class="footnote">1</sup>
+								</li>
+								<li class="list-item">抗水性能：<br>最多可在 1 米水深停留 30 分钟
+									<sup class="footnote">2</sup>
+								</li>
+								<li class="list-item">6.1 英寸<br>Liquid 视网膜高清显示屏
+									<sup class="footnote">3</sup>
+								</li>
+							</ul>
+							<input type="button" name="" id="buyButton" value="购买" /><br>
+							<a class="furtherMore" href="https://www.apple.com.cn/iphone-se/">进一步了解</a>
+						</div>
+					</div>
 				</div>
 			</div>
-			
+			<div class="blcoks2">
+				<div class="blcok2">
+					<span class="block2-headline">换购新 iPhone，享受<br>
+					最高达 RMB 3650<br>
+					的折抵优惠。<br>
+					</span>
+					<span class="block2-desc">通过 Apple Trade In 换购计划，你可以用符合条件的智能手机来换购新 iPhone，享受折抵优惠4。这样一来，你受益，地球也受益。
+					</span>
+					<a class="furtherMore" href="https://www.apple.com.cn/iphone-se/">进一步了解</a>
+					<div class="block2-picture"><img src="https://www.apple.com.cn/v/iphone/home/al/images/overview/retail/giveback__eeril6qn6wsy_large.jpg" ></div>
+				</div>
+				<div class="blcok2">
+					<span class="block2-headline">升级到新款 iPhone，轻轻松松。
+					</span>
+					<span class="block2-desc">加入 iPhone 年年焕新计划，每年获取新 iPhone，享受 AppleCare+ 服务计划，还可选择分期付款5。
+					</span>
+					<a class="furtherMore" href="https://www.apple.com.cn/iphone-se/">进一步了解</a>
+					<div class="block2-picture"><img src="https://www.apple.com.cn/v/iphone/home/al/images/overview/retail/iphone_upgrade__xfm3lc1ma2a2_large.jpg" ></div>
+				</div>
+			</div>
 		</div>
+		
+		
+		
 	</body>
 </html>
