@@ -1,0 +1,19 @@
+body{
+    background-color: black;
+    color: #007acc;
+}
+#menu{
+    background-color: #ffffff;
+    display: none;
+    width: 100px;
+    height: 200px;
+}
+#div1{
+    display: none;
+    background-color: gray;
+    width:300px;
+    height: 100px;
+    justify-content: center;
+    align-items: center;
+    color: red;
+}

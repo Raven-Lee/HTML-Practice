@@ -1,20 +1,51 @@
 <html>
+    <link id="l1"rel="stylesheet" href="blue.css">
     <head>
         <meta charset="utf-8">
         <script>
+         function show(){
+             let obj = document.getElementById('div1');
+             obj.style.display = 'flex';  
+         }
+
+         function hide(){
+            let obj = document.getElementById('div1');
+            obj.style.display = 'none';
+         }
          
+         function blue(){
+            let ol =  document.getElementById('l1');
+            ol.href='blue.css';
+         }
+         
+         function yellow(){
+            let ol =  document.getElementById('l1');
+            ol.href='yellow.css';
+         }
+
+         function hideShow(){
+             let obj = document.getElementById('menu');
+             if(obj.style.display == 'none'){
+                obj.style.display = 'block'; 
+             }
+             else{
+                obj.style.display = 'none'; 
+             }
+         }
         </script>
-        <style>
-            #div1{
-                display: none;
-                background-color: gray;
-                width:300px;
-                height: 100px;
-            }
-        </style>
     </head>
     <body>
-        <div onmouseover="div1.style.display='block'">*鼠标放我身上</div>
+        <div onmouseover=show() onmouseout=hide()>*鼠标放我身上</div>
         <div id="div1">温馨提示：您正在被监视中</div>
+        <input type="button" value="黄色皮肤" onclick=yellow()>
+        <input type="button" value="蓝色皮肤" onclick=blue()>
+        <br><br>
+        <input type="button" name="" id="" value="点击显示或隐藏菜单" onclick=hideShow() >
+        <ul id="menu">
+            <li>健身</li>
+            <li>做饭</li>
+            <li>吃饭</li>
+            <li>学习</li>
+        </ul>
     </body>
 </html>
