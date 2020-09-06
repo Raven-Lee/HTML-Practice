@@ -1,0 +1,68 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+        <script>
+            window.onload = function()
+            {
+                let oBtn1 = document.getElementById("btn1");
+                let odiv = document.getElementById("div1");
+                let checkboxs = odiv.getElementsByTagName("input");
+
+                console.log(checkboxs);
+                
+                
+            }
+            function checkAll()
+            {
+                let oBtn1 = document.getElementById("btn1");
+                let odiv = document.getElementById("div1");
+                let checkboxs = odiv.getElementsByTagName("input");
+                
+                
+                for (let index = 0; index < checkboxs.length; index++) 
+                    {
+                    const element = checkboxs[index];
+                    if(element.checked == false)//当有一个是未选中，则全选
+                    {
+                        for (let index = 0; index < checkboxs.length; index++)
+                        {
+                        const element = checkboxs[index];
+                        element.checked=true;
+                        console.log("修改了"+element+"true");
+                        }
+                        break;
+                    }
+                    else//如果是全选，则全取消选中
+                    {
+                        for (let index = 0; index < checkboxs.length; index++)
+                        {
+                        const element = checkboxs[index];
+                        element.checked=false;
+                        console.log("修改了"+element+"flase");
+                        }
+                        break;
+                    }
+                    
+                }
+               
+            }
+        </script>
+    </head>
+    <body>
+        <div>
+            <p>全选复选框</p>
+            <input type="button" name="全选" id="btn1" value="全选" onclick="checkAll()"><br>
+            <div id="div1">
+                <input type="checkbox" /><br>
+                <input type="checkbox" /><br>
+                <input type="checkbox" /><br>
+                <input type="checkbox" /><br>
+                <input type="checkbox" /><br>
+                <input type="checkbox" /><br>
+                <input type="checkbox" /><br>
+                <input type="checkbox" /><br>
+            </div>
+            
+        </div>
+    </body>
+</html>

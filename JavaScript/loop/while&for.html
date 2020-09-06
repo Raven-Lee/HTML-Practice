@@ -1,0 +1,40 @@
+<html>
+    
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+        <script>
+            window.onload = function()
+            {
+                let divs = document.getElementsByTagName('div');
+                /*
+                while (index < divs.length) {
+                    divs[index].style.backgroundColor='black';
+                    console.log(index);
+                    index++;
+                }
+                */
+                for (let i = 0; i < divs.length; i++) {
+                    divs[i].style.backgroundColor='black';
+                }
+            }
+            
+        </script>
+        <style>
+            div{
+                height: 100px;
+                width: 100px;
+                border:1px solid black;
+                margin: 10px;
+                float: left;
+            }
+        </style>
+    </head>
+    <body>
+
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        
+    </body>
+</html>

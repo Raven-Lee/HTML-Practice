@@ -1,0 +1,66 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+        <script>
+            function exe(){
+                let address = document.getElementById('address').value;
+                let companyType = document.getElementById('companyType').value;
+                let companyName = document.getElementById('companyName').value;
+                let bossName = document.getElementById('bossName').value;
+                let money = document.getElementById('money').value;
+                let productName = document.getElementById('productName').value;
+                let unit = document.getElementById('unit').value;
+
+                let result = document.getElementById('result');
+
+                result.value = address + '最大'+ companyType +'倒闭了，王八蛋老板' + '吃喝嫖赌，欠下了' +
+                    money + '个亿，带着他的小姨子跑了！我们没有办法，拿着' + productName +'抵工资！原价都是一' +
+                    unit + '多、两' + unit + '多、三'+ unit +'多的' +productName + '现在全部只卖二十块，统统二十块！'+
+                    bossName+'王八蛋，你不是人！我们辛辛苦苦给你干了大半年，你不发工资，你欠我血汗钱，还我血汗钱！';
+                
+            }
+        </script>
+        <style>
+            #result{
+                margin-top: 10px;
+                margin-left: 5px;
+                width: 561px;
+                height: 300px;
+            }
+            
+        </style>
+    </head>
+
+    <body>
+        
+        <div>
+            <h1>商店吆喝生成器</h1>
+            <table border="0" cellpadding="0" cellspacing="5">
+                <tr>
+                    <td>地名：</td>
+                    <td><input type="text" id="address" value="温州" ></td>
+                    <td>公司类型：</td>
+                    <td><input type="text" id="companyType"value="皮革厂" ></td>
+                </tr>
+                <tr>
+                    <td>公司名称：</td>
+                    <td><input type="text" id="companyName"value="江南皮革厂" ></td>
+                    <td>老板姓名：</td>
+                    <td><input type="text" id="bossName" value="刘全有"></td>
+                </tr>
+                <tr>
+                    <td>money：</td>
+                    <td><input type="text" id="money" value="100"></td>
+                    <td>产品：</td>
+                    <td><input type="text" id="productName"value="皮鞋" ></td>
+                </tr>
+                <tr>
+                    <td>价格计量单位：</td>
+                    <td><input type="text" id="unit"value="百" ></td>
+                    <td><input type="button" name="" id="exe" value="生成" onclick="exe()"></td>
+                </tr>
+            </table>
+            <textarea type="text" id="result"></textarea>
+        </div>
+    </body>
+</html>

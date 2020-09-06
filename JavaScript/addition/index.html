@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+        <script>
+            function addition()
+            {
+                let num1 =  document.getElementById('add1').value;
+                let num2 =  document.getElementById('add2').value;
+                let result = document.getElementById('result');
+                result.value = Number(num1) + Number(num2);
+            }
+        </script>
+    </head>
+    <body>
+        点击运算按钮，执行加法运算<br>
+
+        <input id="add1" type="text">+
+        <input id="add2" type="text">=
+        <input id="result" type="text">
+        <input id="exe" type="button" value="运算" onclick="addition()">
+
+    </body>
+</html>

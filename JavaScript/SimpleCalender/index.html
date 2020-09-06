@@ -1,0 +1,89 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+        <link rel="stylesheet" href="index.css">
+        <script>
+            window.onload = function()
+            {
+                let oDiv = document.getElementById('background');
+                let aMonth = document.getElementsByTagName('month');
+                let oText = document.getElementById('text');
+                console.log("声明完成");
+                for (let index = 0; index < aMonth.length; index++) {
+                    aMonth[index].onmouseover = function()
+                    {
+                        for (let index = 0; index < aMonth.length; index++) {
+                            aMonth[index].className = 'month';
+                            console.log("复原样式" + index);
+                        }
+                        
+                        element.className = 'active';
+
+                    }
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <div id="background">
+            <ul id="monthBlock">
+                <li class="active">
+                    <p class="monthNum">1</p>
+                    <p class="MonthEnglish">JAN</p>
+                </li>
+                <li class="month">
+                    <p class="monthNum">2</p>
+                    <p class="MonthEnglish">FER</p>
+                </li>
+                <li class="month">
+                    <p class="monthNum">3</p>
+                    <p class="MonthEnglish">MAR</p>
+                </li>
+                <li class="month">
+                    <p class="monthNum">4</p>
+                    <p class="MonthEnglish">APR</p>
+                </li>
+                <li class="month">
+                    <p class="monthNum">5</p>
+                    <p class="MonthEnglish">MAY</p>
+                </li>
+                <li class="month">
+                    <p class="monthNum">6</p>
+                    <p class="MonthEnglish">JUN</p>
+                </li>
+                <li class="month">
+                    <p class="monthNum">7</p>
+                    <p class="MonthEnglish">JUL</p>
+                </li>
+                <li class="month">
+                    <p class="monthNum">8</p>
+                    <p class="MonthEnglish">AUG</p>
+                </li>
+                <li class="month">
+                    <p class="monthNum">9</p>
+                    <p class="MonthEnglish">SEP</p>
+                </li>
+                <li class="month">
+                    <p class="monthNum">10</p>
+                    <p class="MonthEnglish">OCT</p>
+                </li>
+                <li class="month">
+                    <p class="monthNum">11</p>
+                    <p class="MonthEnglish">NOV</p>
+                </li>
+                <li class="month">
+                    <p class="monthNum">12</p>
+                    <p class="MonthEnglish">DEC</p>
+                </li>
+
+            </ul>
+            
+            <div id="text">
+                <p id="monthTitle">1月活动</p>
+                <div id="detail">石川JavaScript从入门到精通视频教程
+                    Blue石川老师经典JavaScript从入门到精通的视频教程
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

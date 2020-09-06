@@ -1,0 +1,78 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+        <script>
+            window.onload = function(){
+               
+            }
+            function exe()
+            {
+                let initialCapital = document.getElementById('initialCapital').value;
+                let interestRate = document.getElementById('interestRate').value/100;
+                let saveYear = document.getElementById('saveYear').value;
+                let additionalCapital = document.getElementById('additionalCapital').value;
+                
+                let Capital = document.getElementById('Capital');
+                let interests = document.getElementById('interests');
+                let interestsAndcapital = document.getElementById('interestsAndcapital');
+                //计算本金和
+                Capital.value = Number(initialCapital) + saveYear * additionalCapital;
+                //计算利息和
+                let capPerYear = Number(initialCapital);
+                let interestsPerYear = 0;
+                for (let index = 0; index < saveYear; index++) {
+                    capPerYear +=   index * additionalCapital;
+                    console.log('第'+ index + '年本金' + capPerYear);
+                    interestsPerYear = interestsPerYear + capPerYear * interestRate;
+                    console.log('第'+ Number(index+1) + '年利息' + interestsPerYear);
+                }
+                interests.value = interestsPerYear;
+                //计算本息和
+                interestsAndcapital.value = Number(Capital.value) + Number(interestsPerYear);
+            }
+        </script>
+        <style>
+            #exe{
+                width: 200px;
+            }
+            #button{
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <table border="0"> 
+            <tr>
+                <td>起始资金</td>
+                <td><input type="text" name="" id="initialCapital" value="10000">&nbsp￥</td>
+            </tr>
+            <tr>
+                <td>每年收益</td>
+                <td><input type="text" name="" id="interestRate" value="6">&nbsp%</td>
+            </tr>
+            <tr>
+                <td>复利年数</td>
+                <td><input type="text" name="" id="saveYear" value="5">&nbsp年</td>
+            </tr>
+            <tr>
+                <td>每年追加资金</td>
+                <td><input type="text" name="" id="additionalCapital" value="10000">&nbsp￥</td>
+            </tr>
+            <tr>
+                <td colspan="2" id="button"><input type="button" name="" id="exe"onclick="exe()" value="计算"></td>
+            </tr>
+            <tr>
+                <td>本金和</td>
+                <td><input type="text" name="" id="Capital" disabled="on">&nbsp￥</td>
+            </tr>
+            <tr>
+                <td>利息和</td>
+                <td><input type="text" name="" id="interests" disabled="on">&nbsp￥</td>
+            </tr>
+            <tr>
+                <td>本息和</td>
+                <td><input type="text" name="" id="interestsAndcapital" disabled="on">&nbsp￥</td>
+            </tr>
+        </table>
+    </body>
+</html>
