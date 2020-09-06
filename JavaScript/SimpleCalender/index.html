@@ -5,20 +5,33 @@
         <script>
             window.onload = function()
             {
+                let arr = [
+                    '一月份啦！准备过年啦！',
+                    '二月份啦！天气有没有变暖呀！',
+                    '三月份啦！树枝泛绿啦！',
+                    '四月份啦！',
+                    '五月份啦！',
+                    '六月份啦！',
+                    '七月份啦！',
+                    '八月份啦！',
+                    '九月份啦！',
+                    '十月份啦！',
+                    '十一月份啦！',
+                    '十二月份啦！'
+                ]
                 let oDiv = document.getElementById('background');
-                let aMonth = document.getElementsByTagName('month');
+                let aMonth = document.getElementsByTagName('li');
                 let oText = document.getElementById('text');
-                console.log("声明完成");
+                console.log("声明完成" );
+                //给每个li添加onmouseover属性
                 for (let index = 0; index < aMonth.length; index++) {
                     aMonth[index].onmouseover = function()
                     {
                         for (let index = 0; index < aMonth.length; index++) {
                             aMonth[index].className = 'month';
-                            console.log("复原样式" + index);
                         }
-                        
-                        element.className = 'active';
-
+                        aMonth[index].className = 'active';
+                        oText.innerHTML = '<h2>'+(index+1)+'月活动</h2>'+'<p>'+arr[index]+'</p>';
                     }
                 }
             }

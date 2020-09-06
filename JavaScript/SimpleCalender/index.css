@@ -8,7 +8,7 @@ ul{
 #background{
     background-color: #ebe8e9;
     width: 300px;
-    height: 600px;
+    height: 700px;
     display: block;
     justify-content: center;
 }
@@ -38,6 +38,7 @@ ul{
     text-align: center;
     margin:10px 10px;
     float: left;
+    border: 1px solid black;
 }
 .monthNum{
     font-weight: bold;
@@ -50,7 +51,7 @@ ul{
 #text{
     background-color: #f1f1f1;
     color: #424242;
-    height: 200px;
+    height: 150px;
     width: 235px;
     margin: auto;
 }
