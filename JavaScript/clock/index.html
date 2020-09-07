@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+        <link rel="stylesheet" href="index.css">
+        <script>
+            //使用定时器定时获取当前时间，作为时间数字图片的路径
+            /*
+            TO DO
+            补上年月日星期
+            补上冒号图片
+            图片翻转效果
+            */
+            window.onload = function()
+            {
+                titok();
+                setInterval('titok()',1000);
+            }
+            //生成当前时间，然后设置图片路径
+            function titok()
+            {
+                let d = new Date();
+                let aImgs = document.getElementsByTagName('img');
+                let str = toDou(d.getHours()) + toDou(d.getMinutes()) +toDou(d.getSeconds());
+                for (let index = 0; index < aImgs.length; index++) {
+                    const element = aImgs[index];
+                    element.src = 'img/'+str.charAt(index)+'.svg';
+                }
+            }
+            //一位数左边补0
+            function toDou(n)
+            {
+                return n>9?''+n:'0'+n
+            }
+        </script>
+    </head>
+
+    <body>
+        <div id="block">
+            <p>滚动时钟</p>
+            <img src="img/0.svg" alt="">
+            <img src="img/0.svg" alt="">
+            :
+            <img src="img/0.svg" alt="">
+            <img src="img/0.svg" alt="">
+            :
+            <img src="img/0.svg" alt="">
+            <img src="img/0.svg" alt="">
+        </div>
+        
+    </body>
+</html>

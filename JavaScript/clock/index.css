@@ -1,0 +1,18 @@
+body{
+    background-color: #222831;
+    color: #00adb5;
+    display: block;
+    margin: auto;
+    align-content: center;
+    align-items: center;
+}
+#block{
+    display: block;
+    margin: auto;
+    align-content: center;
+}
+img{
+    width: 30px;
+    height: 40px;
+    fill: #00adb5;
+}
