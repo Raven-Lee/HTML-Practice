@@ -6,21 +6,21 @@
             //使用定时器定时获取当前时间，作为时间数字图片的路径
             /*
             TO DO
-            补上年月日星期
-            补上冒号图片
             图片翻转效果
             */
             window.onload = function()
             {
                 titok();
                 setInterval('titok()',1000);
+                dateString();
             }
             //生成当前时间，然后设置图片路径
             function titok()
             {
                 let d = new Date();
-                let aImgs = document.getElementsByTagName('img');
-                let str = toDou(d.getHours()) + toDou(d.getMinutes()) +toDou(d.getSeconds());
+                let titok = document.getElementById('titok')
+                let aImgs = titok.getElementsByTagName('img');
+                let str = toDou(d.getHours()) +'c' + toDou(d.getMinutes()) +'c' + toDou(d.getSeconds());
                 for (let index = 0; index < aImgs.length; index++) {
                     const element = aImgs[index];
                     element.src = 'img/'+str.charAt(index)+'.svg';
@@ -31,20 +31,50 @@
             {
                 return n>9?''+n:'0'+n
             }
+
+            function dateString()
+            {
+                let d = new Date();
+                let oDateString = document.getElementById('date');
+                let aImgs = oDateString.getElementsByTagName('img');
+                let str = d.getFullYear()  + toDou(d.getMonth()) + toDou(d.getDate()) ;
+                console.log(str);
+                for (let index = 0; index < aImgs.length; index++) {
+                    const element = aImgs[index];
+                    element.src = 'img/'+str.charAt(index)+'.svg';
+                }
+
+            }
         </script>
     </head>
 
     <body>
         <div id="block">
-            <p>滚动时钟</p>
-            <img src="img/0.svg" alt="">
-            <img src="img/0.svg" alt="">
-            :
-            <img src="img/0.svg" alt="">
-            <img src="img/0.svg" alt="">
-            :
-            <img src="img/0.svg" alt="">
-            <img src="img/0.svg" alt="">
+            <div id="title">滚动时钟</div>
+            <div id="date">
+                <img src="img/0.svg" alt="">
+                <img src="img/0.svg" alt="">
+                <img src="img/0.svg" alt="">
+                <img src="img/0.svg" alt="">
+                年
+                <img src="img/0.svg" alt="">
+                <img src="img/0.svg" alt="">
+                月
+                <img src="img/0.svg" alt="">
+                <img src="img/0.svg" alt="">
+                日
+            </div>
+            <div id="titok">
+                <img src="img/0.svg" alt="">
+                <img src="img/0.svg" alt="">
+                <img src="img/0.svg" alt="">
+                <img src="img/0.svg" alt="">
+                <img src="img/0.svg" alt="">
+                <img src="img/0.svg" alt="">
+                <img src="img/0.svg" alt="">
+                <img src="img/0.svg" alt="">
+            </div>
+            
         </div>
         
     </body>

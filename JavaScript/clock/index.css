@@ -1,18 +1,43 @@
 body{
     background-color: #222831;
-    color: #00adb5;
+    color: #a6a6a6;
     display: block;
-    margin: auto;
     align-content: center;
     align-items: center;
 }
 #block{
     display: block;
-    margin: auto;
+    margin: 300px auto;
     align-content: center;
+    width: 100%;
+    
+}
+#title{
+    margin: 0 auto;
+    align-content: center;
+    text-align: center;
+    width: 1000px;
+    font-size:95;
+    font-weight: bold;
+}
+#date{
+    display: flex;
+    margin: 0 auto;
+    align-content: center;
+    align-items: center;
+    width: 1000px;
+    font-size:95;
+    font-weight: bold;
+}
+#titok{
+    display: flex;
+    margin: 0 auto;
+    align-content: center;
+    align-items: center;
+    width: 800px;
 }
 img{
-    width: 30px;
-    height: 40px;
+    width: 100px;
+    height: 120px;
     fill: #00adb5;
 }
