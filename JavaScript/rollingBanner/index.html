@@ -1,0 +1,102 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+        <link rel="stylesheet" href="index.css">
+        <script>
+            let speed = 2;
+            window.onload = function()
+            {
+                let oUl1  = document.getElementById('ul1');
+                let aLi = document.getElementsByTagName('li');
+                let oBtn1 = document.getElementById('button1');
+                let oBtn2 = document.getElementById('button2');
+                let oInput1 = document.getElementById('input1');
+                let oBtn3 = document.getElementById('button3');
+                //把Banner的图片翻倍
+                oUl1.innerHTML = oUl1.innerHTML + oUl1.innerHTML;
+                //设置Banner的外部容器长度自适应
+                oUl1.style.width = aLi.length * aLi[0].offsetWidth +'px';
+
+                
+
+                //每30毫秒往左移2px
+                Timer = setInterval("move()",30);
+
+                //鼠标放上去就暂停定时器
+                oUl1.onmouseover=function()
+                {
+                    clearInterval(Timer);
+                }
+                //鼠标离开时启动定时器
+                oUl1.onmouseout=function()
+                {
+                    Timer = setInterval("move()",30);
+                }
+                
+                //点击修改滚动方向
+                oBtn1.onclick = function()
+                {
+                    speed = 2
+                }
+                oBtn2.onclick = function()
+                {
+                    speed = -2
+                }
+                //点击修改滚动速度
+                oBtn3.onclick = function()
+                {
+                    if(!isNaN(oInput1.value))
+                    {
+                        if(Math.abs(oInput1.value)>10)
+                        {
+                            alert('速度太快了!');
+                        }
+                        else
+                        {
+                            speed = oInput1.value;
+                        }
+                        
+                    }
+                    else
+                    {
+                        alert('请输入数字！')
+                    }
+                }
+            }
+            function move(){
+                    let oUl1  = document.getElementById('ul1');
+                    //左移动：当滚动到一半时，重置滚动条位置
+                    if(oUl1.offsetLeft < -oUl1.offsetWidth/2)
+                    {
+                        oUl1.style.left = '0';
+                    }
+                    //右移动：当滚动条移动到左端尽头时，重置滚动条位置
+                    if(oUl1.offsetLeft > 0)
+                    {
+                        oUl1.style.left = -oUl1.offsetWidth/2 + 'px';
+                    }
+                    oUl1.style.left = oUl1.offsetLeft - speed +'px';
+                }
+            
+        </script>
+    </head>
+
+    <body>
+        <div id="divroot">
+            <img id="button1" class="button" src="left.png" alt="">
+            <img id="button2" class="button"  src="right.png" alt="">
+            <input type="text" name="请输入速度" id="input1">
+            <input type="button" id="button3" value="确定">
+            <div id="div1">
+            <ul id="ul1">
+                <li><img src="Banner1.jpg" alt=""></li>
+                <li><img src="Banner2.jpg" alt=""></li>
+                <li><img src="Banner3.jpg" alt=""></li>
+                <li><img src="Banner4.jpg" alt=""></li>
+            </ul>
+            </div>
+            
+        </div>
+        
+    </body>
+</html>
