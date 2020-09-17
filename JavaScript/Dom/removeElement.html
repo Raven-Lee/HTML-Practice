@@ -1,0 +1,31 @@
+<html>
+    <head>
+        
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+        <script>
+            //利用ParentNode删除元素
+            window.onload = function()
+            {
+                let aA = document.getElementsByTagName('a');
+                let oUl = document.getElementById('ul1');
+
+                for (let index = 0; index < aA.length; index++) {
+                    aA[index].onclick = function()
+                    {
+                        oUl.removeChild(this.parentNode);
+                    };
+                }
+            }
+        </script>
+    </head>
+
+    <body>
+        <ul id="ul1">  
+            <li><a href="javacript:;">删除</a></li>
+            <li><a href="javacript:;">删除</a></li>
+            <li><a href="javacript:;">删除</a></li>
+            <li><a href="javacript:;">删除</a></li>
+        </ul>
+
+    </body>
+</html>
