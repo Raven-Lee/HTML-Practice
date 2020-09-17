@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+        <script>
+            //点击一个按钮，生成一行li
+            window.onload = function()
+            {
+                oText = document.getElementById('text1');
+                oBtn = document.getElementById('btn1');
+                oUl = document.getElementById('ul1');
+
+                oBtn.onclick = function()   
+                {
+                    oLi = document.createElement('li');
+                    oLi.innerHTML = oText.value;
+                    oUl.appendChild(oLi);
+                }
+            }
+        </script>
+    </head>
+
+    <body>
+        <div id="div1">
+            <input type="text" name="" id="text1">
+            <input type="button" name="添加" id="btn1" value="添加">
+            <ul id="ul1">
+                
+            </ul>
+        </div>
+
+    </body>
+</html>
