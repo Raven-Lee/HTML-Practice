@@ -1,0 +1,117 @@
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <script>
+      window.onload = function () {
+        let oTab = document.getElementById("tab1");
+
+        //let msg = oTab.getElementsByTagName('tbody')[0].getElementsByTagName('td')[1].innerHTML;
+        let aRows = oTab.tBodies[0].rows;
+        let oldColor;
+        let oName = document.getElementById("btn1");
+        let oAge = document.getElementById("btn2");
+        let oAddButton = document.getElementById("btn3");
+        let aDeleteButton = document.getElementsByTagName("a");
+        let id = oTab.tBodies[0].rows.length + 1;
+
+        //隔行变色
+        for (let index = 0; index < aRows.length; index++) {
+          const element = aRows[index];
+          if (index % 2) {
+            element.style.background = "";
+          } else {
+            element.style.background = "#CCC";
+          }
+          //移入变色
+          element.onmouseover = function () {
+            oldColor = element.style.background;
+            element.style.background = "#007acc";
+          };
+          //移出恢复颜色
+          element.onmouseout = function () {
+            element.style.background = oldColor;
+          };
+        }
+        //add new row
+        oAddButton.onclick = function () {
+          let oTr = document.createElement("tr");
+
+          var oTd = document.createElement("td");
+          oTd.innerHTML = id++;
+          oTr.appendChild(oTd);
+
+          var oTd = document.createElement("td");
+          oTd.innerHTML = oName.value;
+          oTr.appendChild(oTd);
+          console.log(name);
+
+          var oTd = document.createElement("td");
+          oTd.innerHTML = oAge.value;
+          oTr.appendChild(oTd);
+
+          var oTd = document.createElement("td");
+          oTd.innerHTML = '<a href="javascript:;">删除</a>';
+
+          //新增行的删除,记得要添加到tBodies下面
+          oTd.getElementsByTagName("a")[0].onclick = function () {
+            oTab.tBodies[0].removeChild(this.parentNode.parentNode);
+          };
+          oTr.appendChild(oTd);
+
+          oTab.tBodies[0].appendChild(oTr);
+        };
+
+        //删除一行
+        for (let index = 0; index < aDeleteButton.length; index++) {
+          const element = aDeleteButton[index];
+          element.onclick = function () {
+            oTab.tBodies[0].removeChild(this.parentNode.parentNode);
+          };
+        }
+      };
+    </script>
+  </head>
+
+  <body>
+    姓名<input type="text" name="" id="btn1" /> 年龄<input
+      type="text"
+      name=""
+      id="btn2"
+    />
+    <input type="button" name="" id="btn3" value="添加" />
+    <table id="tab1" border="1" width="300px">
+      <thead>
+        <td>ID</td>
+        <td>姓名</td>
+        <td>年龄</td>
+        <td>操作</td>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>张三</td>
+          <td>24</td>
+          <td><a href="javascript:;">删除</a></td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>李四</td>
+          <td>26</td>
+          <td><a href="javascript:;">删除</a></td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>王五</td>
+          <td>22</td>
+          <td><a href="javascript:;">删除</a></td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>赵六</td>
+          <td>34</td>
+          <td><a href="javascript:;">删除</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>
