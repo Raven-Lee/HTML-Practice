@@ -1,44 +1,79 @@
-*
-{
+* {
+    padding: 0;
+    margin: 0;
+}
+#body{
+    float: left;
+}
+#RetrieveColumn{
+    
+  padding-top: 10px;
+  padding-left: 20px ;
+}
+#tab {
+  border: 2px;
+  padding-top: 10px;
+  padding-left: 20px ;
+  margin: auto;
+}
+thead {
+  background-color: #f2f2f2;
+  height: 30px;
+}
+thead tr {
+  height: 30px;
+}
+#check {
+  background-color: #feb62f;
+  color: white;
+  border: 0;
+  margin: 0 5px;
+  width: 40px;
+  height: 30px;
+  background-size: 30px 30px;
+}
+#edit {
+  background-color: #0f9688;
+  color: white;
+  border: 0;
+  margin: 0 5px;
+  width: 40px;
+  height: 30px;
+  background-size: 30px 30px;
+}
+#del {
+  background-color: #fd552d;
+  color: white;
+  border: 0;
+  margin: 0 5px;
+  width: 40px;
+  height: 30px;
+  background-size: 30px 30px;
+}
+#newContainer-background{
+    width: 100%;
+    height: 100%;
+    background: #333333;
+    opacity:0.8;
+    filter: alpha(opacity=80);
+    display: none;
+}
+#newContainer {
+  display: none;
+  border: 1px solid black;
+  width: 300px;
+  height: 300px;
+  background-color: white;
 
 }
-
-#tab
-{
-    border:2px;
-    width:500px;
-    height: 300px;  
+#newContainerTitle{
+    font-weight: bolder;
+    font-size: 30;
+    height: 50px;
+}
+ul {
+  list-style: none;
+}
+#buttonContainer {
     padding-top: 10px;
-
-}
-thead
-{
-    background-color: #f2f2f2;
-}
-#check
-{
-    background-image: url('img/check.png');
-    border: 0;
-    margin: 0 5px;
-    width: 30px;
-    height: 30px;
-    background-size: 30px 30px;
-}
-#edit
-{
-    background-image: url('img/edit.png');
-    border: 0;
-    margin: 0 5px;
-    width: 30px;
-    height: 30px;
-    background-size: 30px 30px;
-}
-#del
-{
-    background-image: url('img/del.png');
-    border: 0;
-    margin: 0 5px;
-    width: 30px;
-    height: 30px;
-    background-size: 30px 30px;
 }
