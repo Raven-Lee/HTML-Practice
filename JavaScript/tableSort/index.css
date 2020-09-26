@@ -1,0 +1,17 @@
+table {
+  border: 1;
+}
+thead {
+  color: #9cdbf1;
+}
+tr {
+}
+td {
+  width: 300px;
+  border-bottom: 1px solid #e6e6e6;
+  text-align: center;
+}
+a{
+    color: #9cdbf1;
+    text-decoration: none;
+}

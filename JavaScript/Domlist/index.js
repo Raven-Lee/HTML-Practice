@@ -167,6 +167,7 @@ function handleInitialy() {
   var oBtn_submit_in_newContainer = document.getElementById("newSubmit");
   var oBtn_save_in_newContainer = document.getElementById("save");
   var oidli = document.getElementById("idli");
+  
   for (let index = 0; index < aBtn.length; index++) {
     const element = aBtn[index];
     //删除当前行
