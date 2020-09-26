@@ -57,13 +57,18 @@ thead tr {
     opacity:0.8;
     filter: alpha(opacity=80);
     display: none;
+    position: relative;
+    
 }
 #newContainer {
   display: none;
   border: 1px solid black;
   width: 300px;
-  height: 300px;
   background-color: white;
+  margin:  auto;
+  padding:30px;
+  
+
 
 }
 #newContainerTitle{
@@ -71,9 +76,13 @@ thead tr {
     font-size: 30;
     height: 50px;
 }
+#newContainer input{
+}
 ul {
   list-style: none;
 }
 #buttonContainer {
-    padding-top: 10px;
+    padding-top: 30px;
+    display: flex;
+    justify-content: flex-end;
 }
