@@ -1,6 +1,6 @@
 window.onload = function () {};
 
-function aSort1(i) {
+function numberSort(i) {
     var oTab = document.getElementById("tab");
     var aRow = oTab.tBodies[0].rows;
     var aThead = document.getElementById("thead");
@@ -24,7 +24,7 @@ function aSort1(i) {
   }
 }
 
-function aSort2() {
+function AlphSort() {
     var oTab = document.getElementById("tab");
     var aRow = oTab.tBodies[0].rows;
     var aThead = document.getElementById("thead");
