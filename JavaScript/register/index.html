@@ -1,0 +1,50 @@
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <script type="text/javascript" src="index.js"></script>
+    <link rel="stylesheet" href="index.css" />
+    <title>注册页</title>
+  </head>
+
+  <body>
+    <div id="backgournd">
+      <div id="container">
+        <h1>欢迎注册</h1>
+        <div id="description">
+          包括以下功能:<br />
+          手机号验证； <br />密码需要好8位以上字母数字组合；<br />
+          发送验证码后倒计时10s<br />倒计时期间不能再次发送验证码，倒计时完成后恢复按钮状态，可重新发送验证码<br />
+          需同意用户协议才能进行注册<br />
+          点击注册按钮，需以上条件全部满足，否则弹出提示并终止注册<br />
+        </div>
+        <table id="field">
+          <tr>
+            <td>手机号</td>
+            <td><input type="text" id="mobile" placeholder="可用于登录和找回密码" /></td>
+          </tr>
+          <tr>
+            <td>密&nbsp&nbsp&nbsp码</td>
+            <td><input type="text" id="psw" placeholder="请设置登录密码" /></td>
+          </tr>
+          <tr>
+            <td>验证码</td>
+            <td>
+              <input type="text" id="code" placeholder="请输入验证码"/>
+              <button id="getCode">获取验证码</button>
+            </td>
+          </tr>
+        </table>
+
+        <button id="submit">注册</button>
+
+        <div id="claim">
+          <input type="checkbox" /><span
+            >阅读并接受<a href="">用户协议</a>及<a href=""
+              >隐私权保护说明</a
+            ></span
+          >
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
