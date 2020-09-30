@@ -1,0 +1,29 @@
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <title>运动Demo</title>
+    <link rel="stylesheet" href="index.css" />
+    <script>
+      
+      var speed = 7;
+      var timer = null;
+
+      function startmove() {
+        var oDiv1 = document.getElementById("div1");
+        clearInterval(timer);
+        timer = setInterval(function () {
+          if (oDiv1.offsetLeft >= 500) {
+            clearInterval(timer);
+          } else {
+            oDiv1.style.left = oDiv1.offsetLeft + speed + "px";
+          }
+        }, 30);
+      }
+    </script>
+  </head>
+
+  <body>
+    <button type="submit" onclick="startmove()">开始</button>
+    <div id="div1"></div>
+  </body>
+</html>

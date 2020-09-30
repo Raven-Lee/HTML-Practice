@@ -7,12 +7,17 @@ window.onload = function () {
   var aWarning = document.getElementsByClassName("warning");
   var oGetCode = document.getElementById("getCode");
   var privateCheck = document.getElementById("privateCheck").checked;
+  var oBtnHideOrShow = document.getElementById("hideOrShow");
 
-  console.log(privateCheck);
   //点击获取验证码
   oGetCode.onclick = getCode;
 
-  //提交按钮状态变化--三个input填了值之后，定时器就停止了。也不知道是为啥。。待修复
+  //隐藏显示密码框
+  oBtnHideOrShow.onclick = function () {
+    showPSW();
+  };
+
+  //提交按钮状态变化--
   SubmitTimer = setInterval(() => {
     if (AllFillCheck() == 1) {
       oSummit.removeAttribute("disabled");
@@ -29,14 +34,11 @@ window.onload = function () {
     for (let index = 0; index < aWarning.length; index++) {
       aWarning[index].style.display = "none";
     }
-    if (
-      (mobileCheck() == 1) &
-      (pswCheck() == 1) &
-      (codeCheck() == 1)
-    ) {
+    if ((mobileCheck() == 1) & (pswCheck() == 1) & (codeCheck() == 1)) {
       alert("注册成功！");
     }
   };
+
 };
 
 //手机号验证
@@ -58,7 +60,8 @@ function pswCheck() {
   console.log("密码位数：" + psw.length);
   if (psw.length < 8) {
     warning1.style.display = "block";
-  } else if (!/(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,16}$/.test(psw)) {//
+  } else if (!/(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,16}$/.test(psw)) {
+    //
     warning2.style.display = "block";
   } else {
     console.log("密码校验通过");
@@ -89,8 +92,8 @@ function getCode() {
 //校验验证码是否正确
 function codeCheck() {
   var warning = document.getElementById("warning-code");
-  var enterCode = document.getElementById('code').value;
-  console.log(warning)
+  var enterCode = document.getElementById("code").value;
+  console.log(warning);
   if (!(enterCode == code)) {
     warning.style.display = "block";
     console.log("验证码错误");
@@ -111,4 +114,27 @@ function AllFillCheck() {
   }
 }
 
-//注册校验
+//显示隐藏密码框
+function showPSW() {
+  var oPsw = document.getElementById("psw");
+  var img = document.getElementById("hideOrShow");
+  if (oPsw.getAttribute("type") == "password") {
+    oPsw.setAttribute("type", "text");
+    img.setAttribute("src", "img/eye.png");
+  } else {
+    oPsw.setAttribute("type", "password");
+    img.setAttribute("src", "img/eyeClose.png");
+  }
+}
+
+//注册框移动--Todo
+// function startMove() {
+//   var oBackgournd = document.getElementById("backgournd");
+//   oBackgournd.style.position='absolute'
+//   var speed = -5;
+
+//   timer = setInterval(() => {
+//     console.log( oContainer.offsetTop)
+//     oBackgournd.style.top = oContainer.offsetTop + speed + 'px';
+//   }, 30);
+// }

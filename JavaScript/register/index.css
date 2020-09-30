@@ -3,7 +3,7 @@
   padding: 0;
 }
 
-#container{
+#backgournd{
     position: absolute;
 }
 #container {
@@ -71,4 +71,15 @@ td input{
 .warning{
   display: none;
   color: red;
+}
+#hideOrShow{
+  background: url(img/eye.png) no-repeat;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  left: 500px;
+  top: 435px;
+}
+#pswtr{
+  position: relative;
 }
