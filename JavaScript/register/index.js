@@ -7,20 +7,20 @@ window.onload = function () {
   var aWarning = document.getElementsByClassName("warning");
   var oGetCode = document.getElementById("getCode");
   var enterCode = document.getElementById("code").value;
+  var privateCheck = document.getElementById("privateCheck").checked;
+
+  console.log(privateCheck);
   //点击获取验证码
   oGetCode.onclick = getCode;
-    
-  //提交按钮状态变化
+
+  //提交按钮状态变化--三个input填了值之后，定时器就停止了。也不知道是为啥。。待修复
   SubmitTimer = setInterval(() => {
-    if (AllFillCheck()==1) {
+    if (AllFillCheck() == 1) {
       oSummit.removeAttribute("disabled");
       oSummit.style.backgroundColor = "#007acc";
-      console.log('都填上了')
-      console.log('定时器'+SubmitTimer)
-    }else{
+    } else {
       oSummit.setAttribute("disabled", "disabled");
       oSummit.style.backgroundColor = "#bdcffa";
-      console.log('没填完')
     }
   }, 500);
 
@@ -95,9 +95,8 @@ function AllFillCheck() {
   var mobile = document.getElementById("mobile").value;
   var psw = document.getElementById("psw").value;
   var enterCode = document.getElementById("code").value;
-
-  if ((mobile != "") & (psw != "") & (enterCode != "")) {
-    clearInterval(SubmitTimer);
+  var privateCheck = document.getElementById("privateCheck").checked;
+  if ((mobile != "") & (psw != "") & (enterCode != "" )&(privateCheck)) {
     return 1;
   }
 }

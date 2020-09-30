@@ -20,22 +20,30 @@
         <table id="field">
           <tr>
             <td>手机号</td>
-            <td><input type="text" id="mobile" placeholder="可用于登录和找回密码" /></td>
+            <td>
+              <input
+                type="text"
+                id="mobile"
+                placeholder="可用于登录和找回密码"
+              />
+            </td>
           </tr>
           <tr>
             <td>密&nbsp&nbsp&nbsp码</td>
-            <td><input type="password" id="psw" placeholder="请设置登录密码" /></td>
+            <td>
+              <input type="password" id="psw" placeholder="请设置登录密码" />
+            </td>
           </tr>
           <tr>
             <td>验证码</td>
             <td>
-              <input type="text" id="code" placeholder="请输入验证码"/>
+              <input type="text" id="code" placeholder="请输入验证码" />
               <button id="getCode">获取验证码</button>
             </td>
           </tr>
         </table>
         <div id="warnings">
-          <p class="warning" id="warning-mobile" >手机号输入有误</p>
+          <p class="warning" id="warning-mobile">手机号输入有误</p>
           <p class="warning" id="warning-psw8">请设置8位以上的密码</p>
           <p class="warning" id="warning-psw8A">密码需要字母数字组合</p>
           <p class="warning" id="warning-code">验证码错误</p>
@@ -43,11 +51,9 @@
         <button id="submit">注册</button>
 
         <div id="claim">
-          <input type="checkbox" /><span
-            >阅读并接受<a href="">用户协议</a>及<a href=""
-              >隐私权保护说明</a
-            ></span
-          >
+          <input type="checkbox"id="privateCheck" />
+          <span>阅读并接受<a href="">用户协议</a>及<a href="">隐私权保护说明</a>
+          </span>
         </div>
       </div>
     </div>
