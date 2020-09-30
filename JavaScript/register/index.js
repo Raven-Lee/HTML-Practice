@@ -6,7 +6,6 @@ window.onload = function () {
   var oSummit = document.getElementById("submit");
   var aWarning = document.getElementsByClassName("warning");
   var oGetCode = document.getElementById("getCode");
-  var enterCode = document.getElementById("code").value;
   var privateCheck = document.getElementById("privateCheck").checked;
 
   console.log(privateCheck);
@@ -33,7 +32,7 @@ window.onload = function () {
     if (
       (mobileCheck() == 1) &
       (pswCheck() == 1) &
-      (codeCheck(enterCode) == 1)
+      (codeCheck() == 1)
     ) {
       alert("注册成功！");
     }
@@ -59,7 +58,7 @@ function pswCheck() {
   console.log("密码位数：" + psw.length);
   if (psw.length < 8) {
     warning1.style.display = "block";
-  } else if (!/(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,16}$/.test(psw)) {
+  } else if (!/(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,16}$/.test(psw)) {//
     warning2.style.display = "block";
   } else {
     console.log("密码校验通过");
@@ -88,10 +87,13 @@ function getCode() {
 }
 
 //校验验证码是否正确
-function codeCheck(enterCode) {
+function codeCheck() {
   var warning = document.getElementById("warning-code");
-  if (!enterCode == code) {
-    warning2.style.display = "block";
+  var enterCode = document.getElementById('code').value;
+  console.log(warning)
+  if (!(enterCode == code)) {
+    warning.style.display = "block";
+    console.log("验证码错误");
   } else {
     console.log("验证码校验通过");
     return 1;
