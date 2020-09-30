@@ -30,9 +30,13 @@ window.onload = function () {
     for (let index = 0; index < aWarning.length; index++) {
       aWarning[index].style.display = "none";
     }
-    mobileCheck();
-    pswCheck();
-    codeCheck(enterCode);
+    if (
+      (mobileCheck() == 1) &
+      (pswCheck() == 1) &
+      (codeCheck(enterCode) == 1)
+    ) {
+      alert("注册成功！");
+    }
   };
 };
 
@@ -42,6 +46,8 @@ function mobileCheck() {
   var warning = document.getElementById("warning-mobile");
   if (!/^1[3456789]\d{9}$/.test(mobile)) {
     warning.style.display = "block";
+  } else {
+    return 1;
   }
 }
 
@@ -57,6 +63,7 @@ function pswCheck() {
     warning2.style.display = "block";
   } else {
     console.log("密码校验通过");
+    return 1;
   }
 }
 
@@ -87,6 +94,7 @@ function codeCheck(enterCode) {
     warning2.style.display = "block";
   } else {
     console.log("验证码校验通过");
+    return 1;
   }
 }
 
@@ -96,7 +104,7 @@ function AllFillCheck() {
   var psw = document.getElementById("psw").value;
   var enterCode = document.getElementById("code").value;
   var privateCheck = document.getElementById("privateCheck").checked;
-  if ((mobile != "") & (psw != "") & (enterCode != "" )&(privateCheck)) {
+  if ((mobile != "") & (psw != "") & (enterCode != "") & privateCheck) {
     return 1;
   }
 }
