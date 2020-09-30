@@ -12,7 +12,7 @@
         <h1>欢迎注册</h1>
         <div id="description">
           包括以下功能:<br />
-          手机号验证； <br />密码需要好8位以上字母数字组合；<br />
+          手机号验证； <br />密码需要8位以上，16位以下字母数字组合；<br />
           发送验证码后倒计时10s<br />倒计时期间不能再次发送验证码，倒计时完成后恢复按钮状态，可重新发送验证码<br />
           需同意用户协议才能进行注册<br />
           点击注册按钮，需以上条件全部满足，否则弹出提示并终止注册<br />
@@ -24,7 +24,7 @@
           </tr>
           <tr>
             <td>密&nbsp&nbsp&nbsp码</td>
-            <td><input type="text" id="psw" placeholder="请设置登录密码" /></td>
+            <td><input type="password" id="psw" placeholder="请设置登录密码" /></td>
           </tr>
           <tr>
             <td>验证码</td>
@@ -34,7 +34,12 @@
             </td>
           </tr>
         </table>
-
+        <div id="warnings">
+          <p class="warning" id="warning-mobile" >手机号输入有误</p>
+          <p class="warning" id="warning-psw8">请设置8位以上的密码</p>
+          <p class="warning" id="warning-psw8A">密码需要字母数字组合</p>
+          <p class="warning" id="warning-code">验证码错误</p>
+        </div>
         <button id="submit">注册</button>
 
         <div id="claim">

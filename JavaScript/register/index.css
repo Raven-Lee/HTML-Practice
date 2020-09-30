@@ -2,9 +2,7 @@
   margin: 0;
   padding: 0;
 }
-#backgournd{
-    
-}
+
 #container{
     position: absolute;
 }
@@ -69,4 +67,8 @@ td input{
 
 #claim{
     text-align: center;
+}
+.warning{
+  display: none;
+  color: red;
 }
