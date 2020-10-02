@@ -10,3 +10,20 @@
     top: 100px;
     left: 0px;
 }
+#shareContainer{
+    position: absolute;
+    width: 200px;
+    height: 400px;
+    top: 200px;
+    left: -200px;
+    background-color: red;
+}
+#shareBtn{
+    position: absolute;
+    top: 180px;
+    right:-50px;
+    background-color: blue;
+    width: 50px;
+    height: 40px;
+    color: #ffffff;
+}

@@ -3,27 +3,20 @@
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
     <title>运动Demo</title>
     <link rel="stylesheet" href="index.css" />
-    <script>
-      
-      var speed = 7;
-      var timer = null;
-
-      function startmove() {
-        var oDiv1 = document.getElementById("div1");
-        clearInterval(timer);
-        timer = setInterval(function () {
-          if (oDiv1.offsetLeft >= 500) {
-            clearInterval(timer);
-          } else {
-            oDiv1.style.left = oDiv1.offsetLeft + speed + "px";
-          }
-        }, 30);
-      }
-    </script>
+    <script type="text/javascript" src="index.js"></script>
   </head>
 
   <body>
-    <button type="submit" onclick="startmove()">开始</button>
+    <button type="submit" id="startMove" >开始</button>
     <div id="div1"></div>
+    <div id="shareContainer">
+      <ul id="shareList">
+        <li>微信</li>
+        <li>微博</li>
+        <li>抖音</li>
+        <li>小红书</li>
+      </ul>
+      <div id="shareBtn">分享到</div>
+    </div>
   </body>
 </html>
