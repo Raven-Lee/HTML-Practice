@@ -1,0 +1,16 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 2000px;
+}
+#div1 {
+  width: 100px;
+  height: 150px;
+  background-color: cornflowerblue;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
