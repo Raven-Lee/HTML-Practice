@@ -1,0 +1,26 @@
+#div1{
+    width: 150px;
+    height: 50px;
+    background-color: cadetblue;
+    position: absolute;
+    top: 40px;
+}
+
+#div2{
+    width: 1px;
+    height: 150px;
+    background-color: black;
+    position: absolute;
+    left: 500px;
+    top: 0;
+}
+
+#div3{
+    width: 1px;
+    height: 150px;
+    background-color: black;
+    position: absolute;
+    left: 400px;
+    top: 0;
+}
+
