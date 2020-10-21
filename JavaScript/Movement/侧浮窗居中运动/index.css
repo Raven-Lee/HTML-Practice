@@ -3,8 +3,10 @@
   padding: 0;
 }
 
-body {
-  height: 2000px;
+#top{
+  position: fixed;
+  left: 0;
+  top: 0;
 }
 #div1 {
   width: 100px;
