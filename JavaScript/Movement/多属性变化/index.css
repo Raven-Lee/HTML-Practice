@@ -1,0 +1,23 @@
+#width{
+    width: 100px;
+    height: 100px;
+    background: cornflowerblue;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: cornsilk;
+    font-size: large;
+}
+
+#height{
+    width: 100px;
+    height: 100px;
+    background: cornflowerblue;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: cornsilk;
+    font-size: large;
+}

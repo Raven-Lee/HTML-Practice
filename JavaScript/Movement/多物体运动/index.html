@@ -1,0 +1,49 @@
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <title>多物体运动</title>
+    <link rel="stylesheet" href="index.css" />
+    <script>
+      window.onload = function () {
+        var aDiv = document.getElementsByTagName("div");
+
+        for (let index = 0; index < aDiv.length; index++) {
+          const element = aDiv[index];
+          element.timer = null
+          element.onmouseover = function () {
+            move(element, 1000);
+          };
+          element.onmouseout = function () {
+            move(element, 100);
+          };
+        }
+      };
+
+      
+
+      function move(obj, Target) {
+        console.log("开始,对象为" + obj + "目标值" + Target+'当前值为:'+ obj.offsetWidth);
+        clearInterval(obj.timer);
+
+        obj.timer = setInterval(function () {
+          var speed = (Target - obj.offsetWidth) / 8;
+          speed = speed > 0 ? Math.ceil(speed) : Math.floor(speed); //取整数
+
+          console.log("当前速度" + speed );
+          if (obj.offsetWidth == Target) {
+            clearInterval(obj.timer);
+          } else {
+            obj.style.width = obj.offsetWidth + speed + "px";
+          }
+        }, 30);
+      }
+    </script>
+  </head>
+
+  <body>
+    <p>鼠标放在色块上,会自动伸长,离开则自动回缩</p>
+    <div id="div1"></div>
+    <div id="div2"></div>
+    <div id="div3"></div>
+  </body>
+</html>

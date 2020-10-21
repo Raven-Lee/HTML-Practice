@@ -1,0 +1,52 @@
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <title>多物体渐变显现</title>
+    <link rel="stylesheet" href="index.css" />
+    <script>
+      window.onload = function () {
+        var aDiv = document.getElementsByTagName("div");
+        for (let index = 0; index < aDiv.length; index++) {
+          const element = aDiv[index];
+          element.timer = null;
+          element.alpha = 30;
+          element.onmouseover = function () {
+            move(element, 100);
+          };
+          element.onmouseout = function () {
+            move(element, 29);
+          };
+        }
+      };
+
+      function move(obj, target) {
+        var speed = 0;
+        
+        clearInterval(obj.timer);
+
+        obj.timer = setInterval(() => {
+          
+          speed =  (target-obj.alpha)/6
+          speed = speed > 0 ? Math.ceil(speed) : Math.floor(speed);
+          console.log(
+            "当前值" + obj.alpha + ", 目标值" + target + ", 当前速度" + speed
+          );
+
+          if ((obj.alpha == target)) {
+            clearInterval(obj.timer);
+          } else {
+            obj.alpha += speed;
+            obj.style.opacity = obj.alpha / 100;
+          }
+        }, 30);
+      }
+    </script>
+  </head>
+
+  <body>
+    <p>鼠标移到物体上, 逐渐显现, 移开则逐渐透明</p>
+    <div id="div1"></div>
+    <div id="div2"></div>
+    <div id="div3"></div>
+  </body>
+</html>

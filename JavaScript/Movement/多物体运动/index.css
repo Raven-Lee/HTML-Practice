@@ -1,0 +1,23 @@
+#div1{
+    background: cornflowerblue;
+    width: 100px;
+    height: 50px;
+    position: absolute;
+    top: 40;
+}
+
+#div2{
+    background: cornflowerblue;
+    width: 100px;
+    height: 50px;
+    position: absolute;
+    top: 110px;
+}
+
+#div3{
+    background: cornflowerblue;
+    width: 100px;
+    height: 50px;
+    position: absolute;
+    top: 180px;
+}

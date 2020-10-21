@@ -1,0 +1,45 @@
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <link rel="stylesheet" href="index.css" />
+    <script>
+      window.onload = function () {
+        var oWidth = document.getElementById('width')
+        oWidth.onmouseover = function(){
+            move(oWidth,'width',500)
+        }
+
+      };
+
+      //属性值变化方法 works for width,height,left,top,opacity
+      function move(obj, attr, target) {
+        var Attr = obj.getAttributeNode(attr);
+        var speed = 0;
+        obj.alpha = 30;
+
+        console.log(Attr)
+
+        clearInterval(obj.timer);
+        obj.timer = setInterval(() => {
+          speed = (target - Attr) / 6;
+          speed = speed > 0 ? Math.ceil(speed) : Math.floor(speed);
+          if (Attr == target) {
+            clearInterval(obj.timer);
+          } else if(attr.value == 'opacity'){
+            obj.alpha += speed;
+            obj.style.opacity = obj.alpha/100;
+          }
+          else{
+            Attr.value = Attr.value + speed + 'px' 
+          }
+        }, 30);
+      }
+    </script>
+    <title>多属性变化</title>
+  </head>
+
+  <body>
+    <div id="width" >变宽</div>
+    <div id="height">变高</div>
+  </body>
+</html>
