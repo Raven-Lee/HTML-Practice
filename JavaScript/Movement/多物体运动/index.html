@@ -10,6 +10,7 @@
         for (let index = 0; index < aDiv.length; index++) {
           const element = aDiv[index];
           element.timer = null
+          element.cur = null
           element.onmouseover = function () {
             move(element, 1000);
           };
@@ -19,21 +20,28 @@
         }
       };
 
-      
-
+      //获取元素的指定属性
+      function getStyle(obj, name) {
+        if (obj.currentStyle) {
+          return obj.currentStyle[name];
+        } else {
+          return getComputedStyle(obj,false)[name];
+        }
+      }
+      //移动物体
       function move(obj, Target) {
-        console.log("开始,对象为" + obj + "目标值" + Target+'当前值为:'+ obj.offsetWidth);
+        obj.cur = parseInt(getStyle(obj,'width'))
+        console.log("开始,对象为" + obj + "目标值" + Target+'当前值为:'+obj.cur );
         clearInterval(obj.timer);
-
         obj.timer = setInterval(function () {
-          var speed = (Target - obj.offsetWidth) / 8;
+          var speed = (Target - obj.cur) / 8;
           speed = speed > 0 ? Math.ceil(speed) : Math.floor(speed); //取整数
 
           console.log("当前速度" + speed );
-          if (obj.offsetWidth == Target) {
+          if (obj.cur == Target) {
             clearInterval(obj.timer);
           } else {
-            obj.style.width = obj.offsetWidth + speed + "px";
+            obj.style.width = obj.cur + speed + "px";
           }
         }, 30);
       }
