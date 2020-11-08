@@ -1,0 +1,86 @@
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <title>Event事件</title>
+    <link rel="stylesheet" href="index.css" />
+    <script>
+      window.onload = function () {
+        var oNoteBtn = document.getElementById("noteBtn");
+        var oNote1 = document.getElementById("note1");
+        var oMouseXY = document.getElementById("mouseXY");
+        var aTail = document.getElementsByClassName("tail");
+        var omoveBlcok = document.getElementById("movableBlock");
+        var oTextInput = document.getElementById("text");
+        var oTextarea = document.getElementById("textarea");
+        //点击按钮时显示文字模块
+        oNoteBtn.onclick = function (ev) {
+          var oEvent = ev || event;
+          oNote1.style.display = "block";
+          oEvent.cancelBubble = true;
+        };
+
+        document.onclick = function () {
+          oNote1.style.display = "none";
+        };
+        //鼠标移动时，给mouseXY赋值
+        document.onmousemove = function (ev) {
+          var x = ev.clientX;
+          var y = ev.clientY;
+          oMouseXY.innerHTML = x + ", " + y;
+          for (let i = aTail.length - 1; i > 0; i--) {
+            var element = aTail[i];
+            element.style.left = aTail[i - 1].offsetLeft + "px";
+            element.style.top = aTail[i - 1].offsetTop + "px";
+          }
+          aTail[0].style.left = ev.clientX + 5 + "px";
+          aTail[0].style.top = ev.clientY + 5 + "px";
+        };
+        //键盘按键捕捉
+        document.onkeydown = function (ev) {
+          var oEvent = ev || event;
+          if (oEvent.keyCode == 37) {
+            omoveBlcok.style.left = omoveBlcok.offsetLeft - 10 + "px";
+          } else if (oEvent.keyCode == 39) {
+            omoveBlcok.style.left = omoveBlcok.offsetLeft + 10 + "px";
+          } else if (oEvent.keyCode == 38) {
+            omoveBlcok.style.top = omoveBlcok.offsetTop - 10 + "px";
+          } else if (oEvent.keyCode == 40) {
+            omoveBlcok.style.top = omoveBlcok.offsetTop + 10 + "px";
+          }
+        };
+        //键盘捕捉，按Ctrl+回车存入数据
+        oTextInput.onkeydown = function (ev) {
+          var oEvent = ev || event;
+          if (oEvent.keyCode == 13 && oEvent.ctrlKey) {
+            oTextarea.value += oTextInput.value + "\n";
+            oTextInput.value = "";
+            oEvent.cancelBubble = true;
+          }
+        };
+      };
+    </script>
+  </head>
+  <body>
+    <button id="noteBtn">点击显示</button>
+    <div id="note1">
+      这个文档和按钮都加了点击事件，但是按钮的点击事件冒泡已经关闭，所以点击按钮可以显示这个模块，点击页面空白处则隐藏这个模块
+    </div>
+    <span>当前鼠标位置：</span><span id="mouseXY"></span>
+    <div class="tail"></div>
+    <div class="tail"></div>
+    <div class="tail"></div>
+    <div class="tail"></div>
+    <div class="tail"></div>
+    <div class="tail"></div>
+    <div class="tail"></div>
+    <div class="tail"></div>
+    <div class="tail"></div>
+    <div class="tail"></div>
+    <div class="tail"></div>
+    <div class="tail"></div>
+    <div id="movableBlock"></div>
+    <br /><br />
+    <input type="text" id="text" /><br /><br />
+    <textarea name="textarea" id="textarea" cols="30" rows="10"></textarea>
+  </body>
+</html>

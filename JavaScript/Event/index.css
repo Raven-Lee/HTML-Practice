@@ -1,0 +1,20 @@
+#note1{
+    width: 400px;
+    height: 300px;
+    background: gray;
+    margin-top: 5px;
+    display: none;
+}
+.tail{
+    width: 30px;
+    height: 30px;
+    background: greenyellow;
+    position: absolute;
+}
+#movableBlock{
+    width: 100px;
+    height: 100px;
+    background: hotpink;
+    position: absolute;
+    bottom: 0;
+}
