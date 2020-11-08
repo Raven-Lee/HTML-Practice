@@ -1,0 +1,32 @@
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <title>图片轮换效果</title>
+    <link rel="stylesheet" href="index.css" />
+    <script src="../move.js"></script>
+    <script>
+      function getByClass(oParent, sClass) {
+        var aEle = oParent.getElementByTagName("*");
+        var aResult = [];
+
+        for (var i = 0; i < aEle.length; i++) {
+          if (aEle[i].className == sClass) {
+            aResult.push(aEle[i]);
+          }
+        }
+
+        return aResult;
+      }
+    </script>
+  </head>
+
+  <body>
+    <ul class="big_pic">
+      <div class="prev"></div>
+      <div class="next"></div>
+
+      <div class="text">加载图片说明</div>
+      <div class="length">计算图片数量</div>
+    </ul>
+  </body>
+</html>

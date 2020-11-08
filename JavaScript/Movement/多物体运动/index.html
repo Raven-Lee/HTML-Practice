@@ -7,15 +7,34 @@
       window.onload = function () {
         var aDiv = document.getElementsByTagName("div");
 
-        for (let index = 0; index < aDiv.length; index++) {
-          const element = aDiv[index];
-          element.timer = null
-          element.cur = null
+        for (let i = 0; i < aDiv.length; i++) {
+          const element = aDiv[i];
+          element.timer = null;
+          element.cur = 0;
+          element.alpha = 30;
+
           element.onmouseover = function () {
-            move(element, 1000);
+            if (element.id == "width") {
+              move(this, 800, "width");
+            } else if (element.id == "height") {
+              move(this, 800, "height");
+            } else if (element.id == "opacity") {
+              move(this, 100, "opacity");
+            }
           };
           element.onmouseout = function () {
-            move(element, 100);
+            if (element.id == "width") {
+              move(this, 100, "width");
+            } else if (element.id == "height") {
+              move(this, 50, "height");
+            } else if (element.id == "opacity") {
+              move(this, 30, "opacity");
+            }
+          };
+          element.onclick = function () {
+            if (element.id == "left") {
+              move(this, 800, "left");
+            }
           };
         }
       };
@@ -25,23 +44,35 @@
         if (obj.currentStyle) {
           return obj.currentStyle[name];
         } else {
-          return getComputedStyle(obj,false)[name];
+          return getComputedStyle(obj, false)[name];
         }
       }
-      //移动物体
-      function move(obj, Target) {
-        obj.cur = parseInt(getStyle(obj,'width'))
-        console.log("开始,对象为" + obj + "目标值" + Target+'当前值为:'+obj.cur );
-        clearInterval(obj.timer);
-        obj.timer = setInterval(function () {
-          var speed = (Target - obj.cur) / 8;
-          speed = speed > 0 ? Math.ceil(speed) : Math.floor(speed); //取整数
 
-          console.log("当前速度" + speed );
-          if (obj.cur == Target) {
-            clearInterval(obj.timer);
+      //运动框架：改变obj的attr属性到Target值
+      function move(obj, Target, attr) {
+        console.log(
+          "开始,对象为" + obj.id + "目标值" + Target + "当前值为:" + obj.cur
+        );
+        clearInterval(obj.timer);
+
+        obj.timer = setInterval(function () {
+          if (attr == "opacity") {
+            obj.cur = Math.round(parseFloat(getStyle(obj, attr)) * 100);
           } else {
-            obj.style.width = obj.cur + speed + "px";
+            obj.cur = parseInt(getStyle(obj, attr)); //获取当前属性值
+          }
+          var speed = (Target - obj.cur) / 8; //速度赋值
+          speed = speed > 0 ? Math.ceil(speed) : Math.floor(speed); //速度取整数
+          console.log("当前速度" + speed);
+
+          if (obj.cur == Target) {
+            //到达目标值则停止
+            clearInterval(obj.timer);
+          } else if (attr == "opacity") {
+            obj.style.filter = "alpha(opacitu:" + obj.cur + speed + ")"; //兼容IE
+            obj.style.opacity = (obj.cur + speed) / 100; //兼容Chrome
+          } else {
+            obj.style[attr] = obj.cur + speed + "px";
           }
         }, 30);
       }
@@ -50,8 +81,9 @@
 
   <body>
     <p>鼠标放在色块上,会自动伸长,离开则自动回缩</p>
-    <div id="div1"></div>
-    <div id="div2"></div>
-    <div id="div3"></div>
+    <div id="width">移入变宽</div>
+    <div id="opacity">移入清晰</div>
+    <div id="height">移入变高</div>
+    <div id="left">点击右移</div>
   </body>
 </html>
